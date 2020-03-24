@@ -7,5 +7,4 @@ const RandomComponent = () => {
         </div>
     )
 }
-
 export default RandomComponent
