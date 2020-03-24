@@ -4,6 +4,7 @@ import {Router} from '@reach/router';
 import Wrapper from './components/Wrapper';
 import Success from './components/Success';
 import axios from 'axios'
+import StuffAndThings from './components/StuffAndThings';
 
 // i used a wrapper so that you can see the registration and login as different components
 // instead of on one page. the wrapper allows me to put both components on the same route.
@@ -11,7 +12,7 @@ import axios from 'axios'
 function App() {
   return (
     <div className="App">
-
+      <StuffAndThings></StuffAndThings>
       <Router>
         <Wrapper path="/"/>
         <Success path="/success" />
