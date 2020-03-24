@@ -37,7 +37,3 @@ body: raw : JSON
 		"dueDate":"2020-8-8"
 	}]
 }
-
-
-postman find all tasks for 1 person (gotta use the ID of that user)
-localhost:8000/api/v1/findTasks/5e7a68ae7da6ad6250e204bd

@@ -15,11 +15,6 @@ module.exports = {
         .then(response => res.json(response))
         .catch(error => res.status(400).json(error))
     },
-    findTasks : (req, res) => {
-        PrimaryObject.find({_id:req.params.id, "tasks":{$exists: true}})
-        .then(response => res.json(response))
-        .catch(error => res.status(400).json(error))
-    },
     findOne : (req, res) => {
         PrimaryObject.findOne({_id:req.params.id})
         .then(response => res.json(response))
