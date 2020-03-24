@@ -1,0 +1,43 @@
+postman create with one task:
+localhost:8000/api/v1/create
+body: raw : JSON
+
+{
+"firstName":"andytest",	
+"lastName":"lastnametest",
+"email":"tongsta@gmail.com",
+"password":"test1234",
+"confirmPassword":"test1234",
+"tasks": {
+		"title":"first tasks title",
+		"description":"description thats 10 characters",
+		"startDate":"2020-3-5"
+	}
+}
+
+postman create with multiple tasks:
+localhost:8000/api/v1/create
+body: raw : JSON
+
+{
+"firstName":"andytest",	
+"lastName":"lastnametest",
+"email":"tongsta@gmail.com",
+"password":"test1234",
+"confirmPassword":"test1234",
+"tasks": [{
+		"title":"first tasks title",
+		"description":"description thats 10 characters",
+		"startDate":"2020-3-5"
+	},
+	{
+		"title":"2nd tasks title",
+		"description":"description thats 10 characters",
+		"startDate":"2020-7-7",
+		"dueDate":"2020-8-8"
+	}]
+}
+
+
+postman find all tasks for 1 person (gotta use the ID of that user)
+localhost:8000/api/v1/findTasks/5e7a68ae7da6ad6250e204bd
