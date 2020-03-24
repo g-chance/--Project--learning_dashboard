@@ -3,9 +3,8 @@ import React from 'react'
 const RandomComponent = () => {
     return (
         <div>
-            Hello World
+            Hello World!!!
         </div>
     )
 }
-
 export default RandomComponent
