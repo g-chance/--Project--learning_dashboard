@@ -2,6 +2,7 @@ const controller = require('../controllers/controller')
 
 module.exports = app => {
     app.get('/api/v1/find', controller.authenticate, controller.find);
+    app.get('/api/v1/findAll', controller.find);
     app.get('/api/v1/findOne/:id', controller.findOne);
     app.post('/api/v1/create', controller.create);
     app.put('/api/v1/updateOne/:id', controller.updateOne);
