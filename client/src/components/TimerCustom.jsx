@@ -175,7 +175,7 @@ const TimerCustom = (x) => {
             <span id="base-timer-label" className="base-timer__label">{formatTime(
                 TIME_LIMIT - tracker
             )}</span>
-            <button disabled={startState} onClick={onClickHandler1}>Start</button>
+            <button hidden={startState} onClick={onClickHandler1}>Start</button>
             <button hidden={!pauseState} onClick={onClickHandler2}>Pause</button>
             <button hidden={!resumeState} onClick={onClickHandler3}>Resume</button>
         </div>
