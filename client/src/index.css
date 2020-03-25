@@ -26,24 +26,24 @@ nav {
   position: fixed;
   padding: 0 10px 0 10px;
   left: 0;
-  right:  0;
-  background-color: lightblue;
-  border-bottom: 2px solid black;
+  right: 0;
+  color: white;
+  background-color: RGB(51, 58, 64);
 }
 nav .wrapper {
   display: grid;
-  grid-template-columns: 15% 1fr 15%;
+  grid-template-columns: 12% 1fr 12%;
   min-height: 40px;
   align-items: center;
 }
 nav .links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 nav .links img {
   width: 75px;
-  padding: 5px 10px;
+  padding: 5px 0;
 }
 nav .logout {
   justify-self: right;
@@ -53,7 +53,24 @@ nav .dropdown {
 }
 /* ENDNAV */
 
+.spacer {
+  padding-top: 100px;
+}
 
+/*  */
+
+.base-timer {
+  margin: 125px auto;
+}
+.base-timer .buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10px 0 0 0;
+}
+.base-timer .buttons button {
+  margin: 0 5px;
+  padding: 5px;
+}
 
 
 /* MEDIA QUERIES */
@@ -81,31 +98,37 @@ nav .dropdown {
   nav .hamburger * {
     height: 4px;
     margin: 3px 0;
-    background-color: black;
+    background-color: white;
   }
   .dropdown .links {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin: 2px 0 0 -270px;
-    padding: 2px;
-    background-color: rgb(173, 216, 230);
-    border: 1px solid black;
+    margin: 2px 0 0 -225px;
+    padding: 5px;
+    background-image: linear-gradient(gray 10%, rgba(128, 128, 128, 0));
     border-radius: 5px;
-    /* box-shadow: 0 0 2px black; */
+    box-shadow: inset 0 0 10px white;
     position: absolute;
+  }
+  .dropdown .center {
+    grid-column: 1/5;
+    justify-self: center;
   }
   .dropdown .links img {
     width: 50px;
+    padding: 0 5px;
+  }
+  .dropdown .buttons {
+    grid-column: 1/5;
+    justify-self: center;
   }
   .dropdown button {
-    grid-column: 2/4;
-    justify-self: center;
-    padding: 5px;
+    width: 75px;
+    padding: 8px 10px;
     margin: 5px 0 5px 0;
     border-radius: 5px;
-    box-shadow: 0 0 5px black;
-    background-color: white;
+    box-shadow: 0 0 5px white;
+    color: white;
+    background-color: rgb(50, 50, 50);
     font-weight: bold;
-    text-transform: uppercase;
   }
 }

@@ -165,9 +165,11 @@ const Timer20 = () => {
             <span id="base-timer-label" className="base-timer__label">{formatTime(
                 TIME_LIMIT - tracker
             )}</span>
-            <button disabled={startState} onClick={onClickHandler1}>Start</button>
-            <button disabled={!pauseState} onClick={onClickHandler2}>Pause</button>
-            <button disabled={!resumeState} onClick={onClickHandler3}>Resume</button>
+            <div className="buttons">
+                <button disabled={startState} onClick={onClickHandler1}>Start</button>
+                <button disabled={!pauseState} onClick={onClickHandler2}>Pause</button>
+                <button disabled={!resumeState} onClick={onClickHandler3}>Resume</button>
+            </div>
         </div>
     )
 }
