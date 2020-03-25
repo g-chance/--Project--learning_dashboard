@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Timer20 = () => {
+const TimerCustom = (x) => {
 
     const FULL_DASH_ARRAY = 283;
     const WARNING_THRESHOLD = .50;
@@ -20,7 +20,7 @@ const Timer20 = () => {
         }
     };
 
-    const TIME_LIMIT = 1200;
+    const TIME_LIMIT = x;
     let remainingPathColor = COLOR_CODES.info.color;
 
 
@@ -182,4 +182,4 @@ const Timer20 = () => {
     )
 }
 
-export default Timer20
+export default TimerCustom
