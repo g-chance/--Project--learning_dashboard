@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from '@reach/router'
 
 const Timer20 = () => {
 
@@ -175,9 +176,11 @@ const Timer20 = () => {
             <span id="base-timer-label" className="base-timer__label">{formatTime(
                 TIME_LIMIT - tracker
             )}</span>
+            <div>
             <button hidden={startState} onClick={onClickHandler1}>Start</button>
             <button hidden={!pauseState} onClick={onClickHandler2}>Pause</button>
             <button hidden={!resumeState} onClick={onClickHandler3}>Resume</button>
+            </div>
         </div>
     )
 }
