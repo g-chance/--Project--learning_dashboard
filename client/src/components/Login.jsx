@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios';
+import { navigate } from '@reach/router';
 const Login = (props) => {
     const [fState, setFState] = useState({
         email:"",
@@ -13,6 +14,7 @@ const Login = (props) => {
         .then(response => {
             console.log(response)
             setErrorState(response.data.msg)
+            navigate('/home')
         })
         .catch(error => console.log(error))
     }
