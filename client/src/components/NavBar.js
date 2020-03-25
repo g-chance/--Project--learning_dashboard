@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from '@reach/router'
 
 const NavBar = (props) => {
 
@@ -23,13 +24,15 @@ const NavBar = (props) => {
                 <div className="nav wrapper">
                     <h3>Learning Dashboard</h3>
                     <div className="links smHide">
-                        <img src="/img/icons_png/background_icon.png" alt="" />
+                        <img src="/img/icons_png/background_icon.png" alt=""/>
                         <img src="/img/icons_png/fun_icon.png" alt="" />
                         <img src="/img/icons_png/notes_icon.png" alt="" />
                         <img src="/img/icons_png/profile_icon.png" alt="" />
                         <img src="/img/icons_png/task_icon.png" alt="" />
                         <img src="/img/icons_png/team_icon.png" alt="" />
-                        <img src="/img/icons_png/timer_icon.png" alt="" />
+                        <Link to="/timer/timer20">
+                            <img src="/img/icons_png/timer_icon.png" alt="" />
+                        </Link>
                     </div>
                     <a className="logout smHide">Logout</a>
                     <div className="dropdown">
@@ -43,10 +46,15 @@ const NavBar = (props) => {
                             <img src="/img/icons_png/fun_icon.png" alt="" />
                             <img src="/img/icons_png/notes_icon.png" alt="" />
                             <img src="/img/icons_png/profile_icon.png" alt="" />
-                            <img src="/img/icons_png/task_icon.png" alt="" />
-                            <img src="/img/icons_png/team_icon.png" alt="" />
-                            <img src="/img/icons_png/timer_icon.png" alt="" />
-                            <button className="logout">Logout</button>
+                            <div className="center">
+                                <img src="/img/icons_png/task_icon.png" alt="" />
+                                <img src="/img/icons_png/team_icon.png" alt="" />
+                                <img src="/img/icons_png/timer_icon.png" alt="" />
+                            </div>
+                            <div className="buttons">
+                                <button>Action</button>
+                                <button className="logout">Logout</button>
+                            </div>
                         </div>
                     </div>
                 </div>
