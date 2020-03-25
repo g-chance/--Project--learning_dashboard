@@ -4,6 +4,9 @@ import {Router} from '@reach/router';
 import Wrapper from './components/Wrapper';
 import Success from './components/Success';
 import Timer20 from './components/Timer20';
+import Timer50 from './components/Timer50';
+import TimerCustom from './components/TimerCustom';
+import TimerSelection from './components/TimerSelection';
 import axios from 'axios'
 import NavBar from './components/NavBar';
 
@@ -17,7 +20,10 @@ function App() {
       <Router>
         <Wrapper path="/"/>
         <Success path="/success" />
+        <TimerSelection path="/timer/select"/>
         <Timer20 path="/timer/timer20" />
+        <Timer50 path="/timer/timer50" />
+        <TimerCustom path="/timer/:time" />
       </Router> 
     </div>
   );
