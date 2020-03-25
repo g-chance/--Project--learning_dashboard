@@ -30,7 +30,7 @@ const NavBar = (props) => {
                         <img src="/img/icons_png/profile_icon.png" alt="profile" />
                         <img src="/img/icons_png/task_icon.png" alt="task" />
                         <img src="/img/icons_png/team_icon.png" alt="team" />
-                        <Link to="/timer/timer20">
+                        <Link to="/timer/select">
                             <img src="/img/icons_png/timer_icon.png" alt="timer" />
                         </Link>
                     </div>
