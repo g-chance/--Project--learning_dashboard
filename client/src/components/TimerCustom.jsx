@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from '@reach/router'
 
-const TimerCustom = (x) => {
+const TimerCustom = (props) => {
 
     const FULL_DASH_ARRAY = 283;
     const WARNING_THRESHOLD = .50;
@@ -20,7 +21,8 @@ const TimerCustom = (x) => {
         }
     };
 
-    const TIME_LIMIT = x;
+    const TIME_LIMIT = props.time;
+    console.log(TIME_LIMIT)
     let remainingPathColor = COLOR_CODES.info.color;
 
 
@@ -92,9 +94,15 @@ const TimerCustom = (x) => {
 
     const formatTime = (time) => {
         if (time >= 3600) {
-            const hours = Math.floor(time / 3600);
+            let hours = Math.floor(time / 3600);
+            if (hours < 10) {
+                hours = `0${hours}`;
+            }
             let minutes = Math.floor(time / 60) - (hours * 60);
-            let seconds = time % 60;
+            if (minutes<10) {
+                minutes = `0${minutes}`;
+            }
+            let seconds = time - (hours*3600 + minutes*60);
             if (seconds < 10) {
                 seconds = `0${seconds}`;
             }
@@ -175,9 +183,11 @@ const TimerCustom = (x) => {
             <span id="base-timer-label" className="base-timer__label">{formatTime(
                 TIME_LIMIT - tracker
             )}</span>
-            <button disabled={startState} onClick={onClickHandler1}>Start</button>
+            <div>
+            <button hidden={startState} onClick={onClickHandler1}>Start</button>
             <button hidden={!pauseState} onClick={onClickHandler2}>Pause</button>
             <button hidden={!resumeState} onClick={onClickHandler3}>Resume</button>
+            </div>
         </div>
     )
 }
