@@ -101,3 +101,27 @@
   justify-content: center;
   font-size: 48px;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.select img{
+  width: 60%;
+  margin: 1% 0 2% 0
+}
+
+.select .action{
+  margin-top: 2%;
+}
+
+.inputLabels{
+  text-align: center;
+}
+
+button {
+  padding: 1% 5%;
+  border-radius: 10%;
+}
