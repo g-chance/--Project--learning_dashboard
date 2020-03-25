@@ -3,6 +3,7 @@ import './App.css';
 import {Router} from '@reach/router';
 import Wrapper from './components/Wrapper';
 import Success from './components/Success';
+import Timer20 from './components/Timer20';
 import axios from 'axios'
 import StuffAndThings from './components/StuffAndThings';
 
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Wrapper path="/"/>
         <Success path="/success" />
+        <Timer20 path="/timer/timer20" />
       </Router> 
     </div>
   );
