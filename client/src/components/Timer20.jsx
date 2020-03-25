@@ -20,7 +20,7 @@ const Timer20 = () => {
         }
     };
 
-    const TIME_LIMIT = 10;
+    const TIME_LIMIT = 1200;
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
 
