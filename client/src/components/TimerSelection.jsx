@@ -31,7 +31,6 @@ const TimerSelection = (props) => {
     return (
         <div className='container'>
             <div className='select'>
-            <h3>20 mins</h3>
             <img src={Timer20} alt="20-min-Timer"/>
             <div className='action'>
             <Link to={props.path === '/timer/select/:taskIdx' ?  `/timer/timer20/${props.taskIdx}` : `/timer/timer20/`}><button>Go</button></Link> 
@@ -39,7 +38,6 @@ const TimerSelection = (props) => {
             </div>
             
             <div className='select'>
-            <h3>50 mins</h3>
             <img src={Timer50} alt="50-min-Timer"/>
             <div className='action'>
             <Link to={props.path === '/timer/select/:taskIdx' ?  `/timer/timer50/${props.taskIdx}` : `/timer/timer50/`}><button>Go</button></Link> 
@@ -48,7 +46,6 @@ const TimerSelection = (props) => {
 
             <div className='select'>
             <form onSubmit={onSubmitHandler}> 
-            <h3>Custom</h3>
             <img src={TimerCustom} alt="20-min-Timer"/>
             <div className='inputLabels'>
             <label>Hours </label>
