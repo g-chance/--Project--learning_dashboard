@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import profileCard from '../images/profileCard.png';
-import editPad from '../images/editPad.jpg';
+import editPad from '../images/editPad.png';
 
 
 const Profile = (props) => {
