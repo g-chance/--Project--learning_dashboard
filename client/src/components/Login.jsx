@@ -12,7 +12,7 @@ const Login = (props) => {
         // all axios calls should submit withCredentials:true if you want to use authenticate from backend
         axios.post('http://localhost:8000/api/v1/login', fState, {withCredentials:true})
         .then(response => {
-            console.log(response)
+            localStorage.setItem('userID',response.data._id)
             setErrorState(response.data.msg)
             navigate('/home')
         })
