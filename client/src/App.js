@@ -7,7 +7,7 @@ import Timer20 from './components/Timer20';
 import Timer50 from './components/Timer50';
 import TimerCustom from './components/TimerCustom';
 import TimerSelection from './components/TimerSelection';
-import axios from 'axios'
+import Profile from './components/Profile';
 import NavBar from './components/NavBar';
 import TaskForm from './components/TaskForm';
 
@@ -21,6 +21,7 @@ function App() {
       <Router>
         <Wrapper path="/" />
         <Success path="/success" />
+        <Profile path="/profile"/>
         <TimerSelection path="/timer/select" />
         <Timer20 path="/timer/timer20" />
         <Timer50 path="/timer/timer50" />

@@ -3,6 +3,7 @@ import axios from 'axios';
 import {navigate} from '@reach/router';
 const Registration = () => {
     const [fState, setFState] = useState({
+        profileImage:"",
         firstName:"",
         lastName:"",
         email:"",
@@ -22,6 +23,7 @@ const Registration = () => {
                 }
                 setErrorState(temp)
             } else {
+                localStorage.setItem('userID',response.data._id)
                 navigate('/success')
             }
         })
