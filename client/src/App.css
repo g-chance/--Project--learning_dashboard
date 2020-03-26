@@ -125,3 +125,23 @@ button {
   padding: 1% 5%;
   border-radius: 10%;
 }
+
+.profileBg,.form{ 
+  position: relative;
+  width: 100%;
+}
+
+.profileInfo{
+  position: absolute;
+  top: 40%;
+  left: 3.8%;
+}
+
+.profileInfo p{
+margin-top: 1%;
+}
+
+.profileImg{
+  width: 18%;
+  max-height: 25%;
+}
