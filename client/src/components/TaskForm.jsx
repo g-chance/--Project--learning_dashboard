@@ -3,9 +3,7 @@ import axios from 'axios';
 import { navigate } from '@reach/router';
 
 const TaskForm = (props) => {
-    
-    const userID = localStorage.getItem('userID')
-    
+    const userID=localStorage.getItem('userID')
     const [ state, setState ] = useState({});
     const [ formState, setFormState ] = useState({
         title: '',
@@ -81,13 +79,13 @@ const TaskForm = (props) => {
     };
 
     //function to just check the state of everything as a debugging tool if you click on the P tag
-    // const checkState = (e) => {
-    //     console.log('state is:', state);
-    //     console.log('formState is:', formState);
-    //     console.log('backendError is:', backendError);
-    //     Object.keys(backendError).map((item, i) => console.log(backendError[item].message));
-    //     console.log(formState.title.length);
-    // };
+    const checkState = (e) => {
+        console.log('state is:', state);
+        console.log('formState is:', formState);
+        console.log('backendError is:', backendError);
+        Object.keys(backendError).map((item, i) => console.log(backendError[item].message));
+        console.log(formState.title.length);
+    };
 
     return (
         <div style={{ margin: '20px' }}>
@@ -142,11 +140,11 @@ const TaskForm = (props) => {
                     Submit
                 </button>
 
-                {/* a debugging h4 that console log's state info
-                <h4 onClick={checkState}>Console Log State and formState</h4> */}
+                {/* a debugging h4 that console log's state info */}
+                <h4 onClick={checkState}>Console Log State and formState</h4>
             </form>
-
-            {/* this is just so i can see existing tasks on the screen
+{/* 
+            this is just so i can see existing tasks on the screen */}
             {state.tasks ? (
                 <table>
                     <thead>
@@ -172,7 +170,7 @@ const TaskForm = (props) => {
                         ))}
                     </tbody>
                 </table>
-            ) : null} */}
+            ) : null}
         </div>
     );
 };
