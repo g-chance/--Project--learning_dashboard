@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import {Router} from '@reach/router';
+import { Router } from '@reach/router';
 import Wrapper from './components/Wrapper';
 import Success from './components/Success';
 import Timer20 from './components/Timer20';
@@ -18,13 +18,14 @@ function App() {
     <div className="wrapper">
       <NavBar></NavBar>
       <Router>
-        <Wrapper path="/"/>
+        <Wrapper path="/" />
         <Success path="/success" />
-        <TimerSelection path="/timer/select"/>
+        <TimerSelection path="/timer/select" />
         <Timer20 path="/timer/timer20" />
         <Timer50 path="/timer/timer50" />
         <TimerCustom path="/timer/:time" />
-      </Router> 
+        <TaskForm path="/:id/new" />
+      </Router>
     </div>
   );
 }
