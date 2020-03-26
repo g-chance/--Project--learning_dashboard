@@ -9,6 +9,7 @@ import TimerCustom from './components/TimerCustom';
 import TimerSelection from './components/TimerSelection';
 import axios from 'axios'
 import NavBar from './components/NavBar';
+import TaskForm from './components/TaskForm';
 
 // i used a wrapper so that you can see the registration and login as different components
 // instead of on one page. the wrapper allows me to put both components on the same route.
