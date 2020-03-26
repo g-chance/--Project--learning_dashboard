@@ -23,10 +23,14 @@ function App() {
         <Success path="/success" />
         <Profile path="/profile"/>
         <TimerSelection path="/timer/select" />
+        <TimerSelection path="/timer/select/:taskIdx" />
         <Timer20 path="/timer/timer20" />
+        <Timer20 path="/timer/timer20/:taskIdx" />
         <Timer50 path="/timer/timer50" />
-        <TimerCustom path="/timer/:time" />
-        <TaskForm path="/:id/new" />
+        <Timer50 path="/timer/timer50/:taskIdx" />
+        <TimerCustom path="/timer/custom/:time" />
+        <TimerCustom path="/timer/custom/:time/:taskIdx" />
+        <TaskForm path="/tasks/new" />
       </Router>
     </div>
   );

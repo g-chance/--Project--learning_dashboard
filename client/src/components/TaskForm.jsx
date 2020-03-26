@@ -4,9 +4,7 @@ import { navigate } from '@reach/router';
 
 const TaskForm = (props) => {
     const userID=localStorage.getItem('userID')
-
     const [ state, setState ] = useState({});
-
     const [ formState, setFormState ] = useState({
         title: '',
         description: '',
