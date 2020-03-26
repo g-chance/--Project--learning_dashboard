@@ -3,8 +3,10 @@ import axios from 'axios';
 import { navigate } from '@reach/router';
 
 const TaskForm = (props) => {
+    
+    const userID = localStorage.getItem('userID')
+    
     const [ state, setState ] = useState({});
-
     const [ formState, setFormState ] = useState({
         title: '',
         description: '',
@@ -28,7 +30,7 @@ const TaskForm = (props) => {
         () => {
             console.log('you are in TaskForm useeffect');
             axios
-                .get(`http://localhost:8000/api/v1/findOne/${props.id}`)
+                .get(`http://localhost:8000/api/v1/findOne/${userID}`)
                 .then((response) => {
                     setState({ ...response.data });
                     console.log('you are in useEffect of TaskForm response is:', response);
@@ -64,7 +66,7 @@ const TaskForm = (props) => {
         temp.push(formState);
 
         axios
-            .put(`http://localhost:8000/api/v1/updateOne/${props.id}`, { tasks: temp })
+            .put(`http://localhost:8000/api/v1/updateOne/${userID}`, { tasks: temp })
             .then((response) => {
                 //this should navigate back to wherever you came from or close this popup if we've implemeneted that feature
                 //navigate('/')
