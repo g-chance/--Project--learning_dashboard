@@ -51,7 +51,7 @@ module.exports = {
                             // httpOnly allows only the server to revoke the cookie.
                             res.cookie('usertoken', newJWT, {
                                 httpOnly:true
-                            }).json({msg:"success"})
+                            }).json({msg:"success",_id:userFromDB._id})
                         } else {
                             res.json({msg:"Password is not correct"})
                         }
