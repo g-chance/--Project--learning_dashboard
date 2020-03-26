@@ -64,8 +64,10 @@ module.exports = {
                 res.json({msg:"DB has failed to run the query", error:error2})
             })
     },
+    
     logout:(req, res) => {
         console.log('got here')
+        localStorage.removeItem('userID')
         res.clearCookie('usertoken').json({msg:'logged out'})
     },
     // i moved this function here because it uses the req, res, next and it seems silly to have it
