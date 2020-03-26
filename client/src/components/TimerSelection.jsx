@@ -4,8 +4,7 @@ import Timer50 from '../images/Timer50.png';
 import TimerCustom from '../images/TimerCustom.png';
 import {Link, navigate} from '@reach/router'
 
-const TimerSelection = () => {
-    
+const TimerSelection = (props) => {
     const [formState,setFormState]=useState({
         hours:'',
         minutes:'',
@@ -22,7 +21,11 @@ const TimerSelection = () => {
     const onSubmitHandler=(e)=>{
         e.preventDefault();
         console.log(formState.hours,formState.minutes,formState.seconds);
-        navigate(`/timer/${(formState.hours)* 3600 + (formState.minutes)*60 + (formState.seconds)*1}`)
+        if(props.path === '/timer/select/:taskIdx'){
+            navigate(`/timer/custom/${(formState.hours)* 3600 + (formState.minutes)*60 + (formState.seconds)*1}/${props.taskIdx}`)
+        }else{
+            navigate(`/timer/custom/${(formState.hours)* 3600 + (formState.minutes)*60 + (formState.seconds)*1}`)
+        }
     }
     
     return (
@@ -31,7 +34,7 @@ const TimerSelection = () => {
             <h3>20 mins</h3>
             <img src={Timer20} alt="20-min-Timer"/>
             <div className='action'>
-            <Link to='/timer/timer20'><button>Go</button></Link> 
+            <Link to={props.path === '/timer/select/:taskIdx' ?  `/timer/timer20/${props.taskIdx}` : `/timer/timer20/`}><button>Go</button></Link> 
             </div>
             </div>
             
@@ -39,7 +42,7 @@ const TimerSelection = () => {
             <h3>50 mins</h3>
             <img src={Timer50} alt="50-min-Timer"/>
             <div className='action'>
-            <Link to='/timer/timer50'><button>Go</button></Link> 
+            <Link to={props.path === '/timer/select/:taskIdx' ?  `/timer/timer50/${props.taskIdx}` : `/timer/timer50/`}><button>Go</button></Link> 
             </div>
             </div>
 
