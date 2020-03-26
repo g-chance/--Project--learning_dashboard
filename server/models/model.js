@@ -19,6 +19,9 @@ const customValidator = (arg) => {
 }
 
 const PrimaryObjectSchema = new mongoose.Schema({
+    profileImage:{
+        type:String
+    },
     firstName: {
         type: String,
         required: [true, "First name is required"]
