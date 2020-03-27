@@ -3,6 +3,7 @@ import axios from 'axios';
 import {navigate} from '@reach/router';
 const Registration = () => {
     const [fState, setFState] = useState({
+        profileImage:"https://www.pngitem.com/pimgs/m/146-1468843_profile-icon-orange-png-transparent-png.png",
         firstName:"",
         lastName:"",
         email:"",
@@ -15,17 +16,22 @@ const Registration = () => {
         // all axios calls should submit withCredentials:true if you want to use authenticate from backend
         axios.post('http://localhost:8000/api/v1/create', fState, {withCredentials:true})
         .then(response => {
-            if(response.data.errors){
-                const temp = []
-                for(let key in response.data.errors) {
-                    temp.push(response.data.errors[key].message)
-                }
-                setErrorState(temp)
-            } else {
-                navigate('/success')
-            }
+                localStorage.setItem('userID',response.data._id)
+                navigate('/profile')
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            if (error.response.data.name == "MongoError"){
+                setErrorState(["Email already exists"]);
+            }else{
+                const temp = []
+                for(let key in error.response.data.errors) {
+                    temp.push(error.response.data.errors[key].message)
+                }
+                console.log(temp)
+                setErrorState(temp)
+            } 
+            console.log(error.response)
+        })
     }
     const onCH = (e) => {
         setFState({
