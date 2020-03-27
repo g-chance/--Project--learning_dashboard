@@ -31,7 +31,7 @@ const NavBar = (props) => {
     return (
         <>
             <nav>
-                <div className="nav wrapper">
+                <div className="navWrapper">
                     <h3>Learning Dashboard</h3>
                     <div className="links smHide">
                         <Link to="tasklist">
