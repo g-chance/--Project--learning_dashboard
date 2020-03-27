@@ -6,6 +6,7 @@ import Success from './components/Success';
 import Timer20 from './components/Timer20';
 import axios from 'axios'
 import NavBar from './components/NavBar';
+import TaskList from './components/TaskList';
 
 // i used a wrapper so that you can see the registration and login as different components
 // instead of on one page. the wrapper allows me to put both components on the same route.
@@ -18,6 +19,7 @@ function App() {
         <Wrapper path="/"/>
         <Success path="/success" />
         <Timer20 path="/timer/timer20" />
+        <TaskList path="/tasklist"></TaskList>
       </Router> 
     </div>
   );

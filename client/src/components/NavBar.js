@@ -7,7 +7,7 @@ const NavBar = (props) => {
 
     useEffect(() => {
         window.addEventListener("mousedown", (e) => {
-            if (e.target.className === "hamburger") {
+            if (e.target.className === "hamburger" || e.target.className === "ignore") {
             } else {
                 setHidden(true);
             }
@@ -28,7 +28,9 @@ const NavBar = (props) => {
                         <img src="/img/icons_png/fun_icon.png" alt="" />
                         <img src="/img/icons_png/notes_icon.png" alt="" />
                         <img src="/img/icons_png/profile_icon.png" alt="" />
-                        <img src="/img/icons_png/task_icon.png" alt="" />
+                        <Link to="/tasklist">
+                            <img src="/img/icons_png/task_icon.png" alt="" />
+                        </Link>
                         <img src="/img/icons_png/team_icon.png" alt="" />
                         <Link to="/timer/timer20">
                             <img src="/img/icons_png/timer_icon.png" alt="" />
@@ -42,14 +44,18 @@ const NavBar = (props) => {
                             <div></div>
                         </div>
                         <div className="links" style={{ display: hidden === true ? 'none' : 'grid' }}>
-                            <img src="/img/icons_png/background_icon.png" alt="" />
-                            <img src="/img/icons_png/fun_icon.png" alt="" />
-                            <img src="/img/icons_png/notes_icon.png" alt="" />
-                            <img src="/img/icons_png/profile_icon.png" alt="" />
+                            <img className="ignore" src="/img/icons_png/background_icon.png" alt="" />
+                            <img className="ignore" src="/img/icons_png/fun_icon.png" alt="" />
+                            <img className="ignore" src="/img/icons_png/notes_icon.png" alt="" />
+                            <img className="ignore" src="/img/icons_png/profile_icon.png" alt="" />
                             <div className="center">
-                                <img src="/img/icons_png/task_icon.png" alt="" />
-                                <img src="/img/icons_png/team_icon.png" alt="" />
-                                <img src="/img/icons_png/timer_icon.png" alt="" />
+                                <Link to="/tasklist">
+                                    <img className="ignore" src="/img/icons_png/task_icon.png" alt="" />
+                                </Link>
+                                <img className="ignore" src="/img/icons_png/team_icon.png" alt="" />
+                                <Link to="/timer/timer20">
+                                    <img className="ignore" src="/img/icons_png/timer_icon.png" alt="" />
+                                </Link>
                             </div>
                             <div className="buttons">
                                 <button>Action</button>
