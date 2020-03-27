@@ -43,17 +43,17 @@ const Notes = (props) => {
         e.preventDefault();
         if (state.tasks && state.tasks[props.taskIdx] != undefined) {
             let temp = state.tasks;
-            temp[props.taskIdx].notes = formState.notes
+            (temp[props.taskIdx].notes).push(formState.notes)
             console.log('state.tasks[props.taskIdx].notes is:', temp);
-        axios
-        .put(`http://localhost:8000/api/v1/updateOne/${userID}`, { tasks: temp })
-        .then((response) => {
-            console.log('notes added to task')
-            navigate('/profile')
-        })
-        .catch((error) => {
-            console.log('error is:', error.response.data);
-        });
+        // axios
+        // .put(`http://localhost:8000/api/v1/updateOne/${userID}`, { tasks: temp })
+        // .then((response) => {
+        //     console.log('notes added to task')
+        //     navigate('/taskList')
+        // })
+        // .catch((error) => {
+        //     console.log('error is:', error.response.data);
+        // });
     }
     }
 
