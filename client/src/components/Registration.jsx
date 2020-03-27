@@ -3,7 +3,7 @@ import axios from 'axios';
 import {navigate} from '@reach/router';
 const Registration = () => {
     const [fState, setFState] = useState({
-        profileImage:"",
+        profileImage:"https://www.pngitem.com/pimgs/m/146-1468843_profile-icon-orange-png-transparent-png.png",
         firstName:"",
         lastName:"",
         email:"",
