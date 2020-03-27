@@ -52,7 +52,7 @@ const TaskForm = (props) => {
         if (formState.title.length === 0) temp = true;
         if (formState.description.length > 0 && formState.description.length < 10) temp = true;
         if (formState.startDate.length === 0) temp = true;
-        if (new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() <= 0) temp = true;
+        if (new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() < 0) temp = true;
         setHasError(temp);
     };
 
@@ -68,7 +68,7 @@ const TaskForm = (props) => {
             .then((response) => {
                 //this should navigate back to wherever you came from or close this popup if we've implemeneted that feature
                 //navigate('/')
-                setChange(!change);
+                // setChange(!change);
                 navigate('/tasklist')
             })
             .catch((error) => {
@@ -94,7 +94,7 @@ const TaskForm = (props) => {
                 {formState.description.length > 0 && formState.description.length < 3 && descriptionError}
             </p>
             <p style={{ color: 'red' }}>
-                {new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() <= 0 && negDateError}
+                {new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() < 0 && negDateError}
             </p>
 
             {/* The submit button is disabled if there are errors but if not this object.keys.map shows backend errors */}
@@ -146,7 +146,7 @@ const TaskForm = (props) => {
             </form>
 {/* 
             this is just so i can see existing tasks on the screen */}
-            {/* {state.tasks ? (
+            {state.tasks ? (
                 <table>
                     <thead>
                         <tr>
@@ -171,7 +171,7 @@ const TaskForm = (props) => {
                         ))}
                     </tbody>
                 </table>
-            ) : null} */}
+            ) : null}
         </div>
     );
 };
