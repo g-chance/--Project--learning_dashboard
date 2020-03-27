@@ -3,7 +3,7 @@ import axios from 'axios';
 import { navigate } from '@reach/router';
 
 const TaskForm = (props) => {
-    const userID=localStorage.getItem('userID')
+    const userID = localStorage.getItem('userID');
     const [ state, setState ] = useState({});
     const [ formState, setFormState ] = useState({
         title: '',
@@ -52,7 +52,7 @@ const TaskForm = (props) => {
         if (formState.title.length === 0) temp = true;
         if (formState.description.length > 0 && formState.description.length < 10) temp = true;
         if (formState.startDate.length === 0) temp = true;
-        if (new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() <= 0) temp = true;
+        if (new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() < 0) temp = true;
         setHasError(temp);
     };
 
@@ -68,8 +68,8 @@ const TaskForm = (props) => {
             .then((response) => {
                 //this should navigate back to wherever you came from or close this popup if we've implemeneted that feature
                 //navigate('/')
-                setChange(!change);
-                navigate('/tasklist')
+                // setChange(!change);
+                navigate('/tasklist');
             })
             .catch((error) => {
                 console.log('error is:', error.response.data);
@@ -88,13 +88,17 @@ const TaskForm = (props) => {
         console.log(formState.title.length);
     };
 
+    const cancelButton = (e) => {
+        navigate('/tasklist');
+    };
+
     return (
         <div style={{ margin: '20px' }}>
             <p style={{ color: 'red' }}>
                 {formState.description.length > 0 && formState.description.length < 3 && descriptionError}
             </p>
             <p style={{ color: 'red' }}>
-                {new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() <= 0 && negDateError}
+                {new Date(formState.dueDate).getTime() - new Date(formState.startDate).getTime() < 0 && negDateError}
             </p>
 
             {/* The submit button is disabled if there are errors but if not this object.keys.map shows backend errors */}
@@ -139,12 +143,12 @@ const TaskForm = (props) => {
                 <br />
                 <button type="submit" disabled={hasError}>
                     Submit
-                </button>
-
+                </button>{' '}
+                <button onClick={cancelButton}>Cancel</button>
                 {/* a debugging h4 that console log's state info */}
-                <h4 onClick={checkState}>Console Log State and formState</h4>
+                {/* <h4 onClick={checkState}>Console Log State and formState</h4> */}
             </form>
-{/* 
+            {/* 
             this is just so i can see existing tasks on the screen */}
             {/* {state.tasks ? (
                 <table>
