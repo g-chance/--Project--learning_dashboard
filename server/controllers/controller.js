@@ -65,11 +65,11 @@ module.exports = {
             })
     },
     
-    // logout:(req, res) => {
-    //     console.log('got here')
-    //     localStorage.removeItem('userID')
-    //     res.clearCookie('usertoken').json({msg:'logged out'})
-    // },
+    logout:(req, res) => {
+        console.log('got here')
+        localStorage.removeItem('userID')
+        res.clearCookie('usertoken').json({msg:'logged out'})
+    },
     // i moved this function here because it uses the req, res, next and it seems silly to have it
     // in a different file altogether when it uses the same variables and secret.
     authenticate: (req, res, next) => {
