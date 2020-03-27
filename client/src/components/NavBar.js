@@ -5,6 +5,7 @@ import axios from 'axios'
 const NavBar = (props) => {
     const userID = localStorage.getItem('userID')
     const [hidden, setHidden] = useState(true)
+    const [refresher,setRefresher] = useState(false)
 
     useEffect(() => {
         window.addEventListener("mousedown", (e) => {
@@ -13,15 +14,17 @@ const NavBar = (props) => {
                 setHidden(true);
             }
         })
-    }, [])
+    }, [refresher])
 
     const onClickHandler = (e) => {
         setHidden(false)
     }
 
-    const logout = (e)=>{
-        localStorage.removeItem('userID')
-        navigate('/')
+    const logout = () => {
+        axios.get('http://localhost:8000/api/v1/logout', { withCredentials: true })
+            .then(response => setRefresher(!refresher))
+            .then(navigate('/'))
+            .catch(error => console.log(error))
     }
 
     return (
