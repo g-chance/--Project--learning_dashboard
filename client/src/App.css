@@ -342,7 +342,7 @@ margin-top: 2%;
 list-style-image: url('./images/star.png');
 }
 
-h2{
+.noteWrapper h2{
   text-align:center;
   color:darkBlue;
   margin-top: 2%;
