@@ -321,11 +321,12 @@ margin-top: 1%;
   opacity: 80%;
   border: none;
   margin: 5% 0;
+  background-color: rgb(238, 238, 252);
 }
 
 .noteList{
   text-align: left;
-  background-color: white;
+  background-color:white;
   opacity: 80%;
 }
 
