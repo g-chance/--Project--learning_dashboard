@@ -10,6 +10,7 @@ import TimerSelection from './components/TimerSelection';
 import Profile from './components/Profile';
 import NavBar from './components/NavBar';
 import TaskForm from './components/TaskForm';
+import Notes from './components/Notes';
 
 // i used a wrapper so that you can see the registration and login as different components
 // instead of on one page. the wrapper allows me to put both components on the same route.
@@ -31,6 +32,7 @@ function App() {
         <TimerCustom path="/timer/custom/:time" />
         <TimerCustom path="/timer/custom/:time/:taskIdx" />
         <TaskForm path="/tasks/new" />
+        <Notes path="/tasks/notes/:taskIdx/new"/>
       </Router>
     </div>
   );
