@@ -14,10 +14,10 @@ const TaskList = (props) => {
     useEffect(() => {
         console.log("you are in TaskList.js")
         console.log(userID)
-        axios.get(`http://localhost:8000/api/v1/findAll`)
+        axios.get(`http://localhost:8000/api/v1/findOne/${userID}`)
         .then((res) => {
-            setTasks(res.data[0].tasks)
-            console.log(res.data[0].tasks)
+            setTasks(res.data.tasks)
+            console.log(res.data.tasks)
         })
         .catch((err) => console.log(err))
     }, [refresher])
@@ -55,6 +55,38 @@ const TaskList = (props) => {
         .catch((err) => console.log(err))
     }
 
+    const formatTime = (time) => {
+        if (time >= 3600) {
+            let hours = Math.floor(time / 3600);
+            if (hours < 10) {
+                hours = `0${hours}`;
+            }
+            let minutes = Math.floor(time / 60) - hours * 60;
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+            let seconds = time - (hours * 3600 + minutes * 60);
+            if (seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+
+            return `${hours}h ${minutes}m ${seconds}s`;
+        } 
+        else if (time === 0){
+            return `None`
+        }
+        else {
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+
+            if (seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+
+            return `${minutes}m ${seconds}s`;
+        }
+    };
+
     return (
         <div className="taskList">
             <Link className="newtaskLink" to="/tasks/new">
@@ -73,7 +105,7 @@ const TaskList = (props) => {
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
                     <p className="deets"><span>Due Date:</span> {task.dueDate}</p>
-                    <p className="deets"><span>Time Spent:</span> {task.timeSpent}</p>
+                    <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task)}>Complete</button>
                         <button>Edit</button>
@@ -89,7 +121,7 @@ const TaskList = (props) => {
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
                     <p className="deets"><span>Due Date:</span> {task.dueDate}</p>
-                    <p className="deets"><span>Time Spent:</span> {task.timeSpent}</p>
+                    <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task)}>Complete</button>
                         <button>Edit</button>
@@ -123,7 +155,7 @@ const TaskList = (props) => {
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
                     {/* <p className="deets"><span>Due Date:</span> {task.dueDate}</p> */}
-                    <p className="deets"><span>Time Spent:</span> {task.timeSpent}</p>
+                    <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
                     <div className="buttons">
                         <button>Move to Active</button>
                         <button onClick={(e) => deleteTask(e, i, task)}>Delete</button>
