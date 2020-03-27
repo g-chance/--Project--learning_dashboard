@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/learning_dashboard', {
+mongoose.connect('mongodb://localhost/learning_dashboard2', {
     useNewUrlParser:true, useUnifiedTopology:true
 })
-    .then(() => console.log(`db connection established`))
-    .catch((err) => console.log(`db connection failed`, err))
+mongoose.set('useCreateIndex', true)
+    // .then(() => console.log(`db connection established`))
+    // .catch((err) => console.log(`db connection failed`, err))

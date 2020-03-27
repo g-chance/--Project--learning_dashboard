@@ -19,6 +19,9 @@ const customValidator = (arg) => {
 }
 
 const PrimaryObjectSchema = new mongoose.Schema({
+    profileImage: {
+        type: String
+    },
     firstName: {
         type: String,
         required: [true, "First name is required"]
@@ -29,6 +32,7 @@ const PrimaryObjectSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        unique: [true, "Email already exists"],
         required: [true, "Email is required"],
         validate: [emailRegexChecker, "Please enter a valid email"]
     },

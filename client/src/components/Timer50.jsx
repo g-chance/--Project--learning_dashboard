@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
 import axios from 'axios';
 
-const Timer20 = (props) => {
+const Timer50 = (props) => {
     const userID = localStorage.getItem('userID');
     const FULL_DASH_ARRAY = 283;
     const WARNING_THRESHOLD = 0.5;
@@ -22,7 +21,7 @@ const Timer20 = (props) => {
         }
     };
 
-    const TIME_LIMIT = 1200;
+    const TIME_LIMIT = 3000;
     let remainingPathColor = COLOR_CODES.info.color;
 
     const [ startState, setStartState ] = useState(false);
@@ -39,7 +38,7 @@ const Timer20 = (props) => {
     useEffect(
         () => {
             //on first load of page, grab user info into state so we can edit tasks if we came to this page via a taskIdx path
-            if (pageLoad && props.path === '/timer/timer20/:taskIdx') {
+            if (pageLoad && props.path === '/timer/timer50/:taskIdx') {
                 axios
                     .get(`http://localhost:8000/api/v1/findOne/${userID}`)
                     .then((response) => {
@@ -92,14 +91,6 @@ const Timer20 = (props) => {
                 });
         }
     };
-
-    // const checkStateInfo = () => {
-    //     console.log('state is:', state);
-    //     console.log('startState is:', startState);
-    //     console.log('pauseState is:', pauseState);
-    //     console.log('resumeState is:', resumeState);
-    //     console.log('localstorage value is:', localStorage.getItem('userID'));
-    // };
 
     const startButton = () => {
         setStartState(!startState);
@@ -213,10 +204,9 @@ const Timer20 = (props) => {
                 <button hidden={!resumeState} onClick={resumeButton}>
                     Resume
                 </button>
-                {/* <button onClick={checkStateInfo}>check on state</button> */}
             </div>
         </div>
     );
 };
 
-export default Timer20;
+export default Timer50;
