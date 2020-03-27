@@ -202,3 +202,88 @@ margin-top: 1%;
   margin-top: 6%;
   padding-right: 10%;
 }
+
+@media only screen and (max-width: 1100px){
+  
+  .profileLabel{
+    margin-top: 0;
+  }
+  .profileInfo{
+    position: absolute;
+    top: 36%;
+    left: 20%;
+    right: 20%;
+    text-align: justify;
+  }
+
+  .profileInfo p{
+    margin-top: 0%;
+    }
+  .editProfile{
+    position: absolute;
+    text-align: center;
+  }
+  .imageTag input{
+    width: 95%;
+    font-size: 0.8rem;
+  }
+  
+  .labelTag{
+    padding-left: 5%;
+    text-align: right;
+    padding-right: 5%;
+    padding-top: 5%;
+  }
+  
+  .editProfile button{
+    margin-top: 2%;
+  }
+  
+  .labelTag label{
+    margin-top: 6%;
+    padding-right: 10%;
+  }
+}
+
+
+@media only screen and (max-width: 768px){
+  .profileContainer{
+    display:grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .profileBg,.form{ 
+    position: relative;
+    width: 99%;
+  }
+  .editWrapper{
+    position: relative;
+    margin-left: auto;
+    width: 100%;
+  }
+  .editProfile{
+    position: absolute;
+    text-align: center;
+  }
+  .imageTag input{
+    margin: 1% 0;
+    width: 95%;
+    font-size: 0.8rem;
+  }
+  
+  .labelTag{
+    padding-left: 5%;
+    text-align: right;
+    padding-right: 5%;
+    padding-top: 5%;
+  }
+  
+  .editProfile button{
+    margin-top: 5%;
+  }
+  
+  .labelTag label{
+    margin-top: 6%;
+    padding-right: 10%;
+  }
+}
