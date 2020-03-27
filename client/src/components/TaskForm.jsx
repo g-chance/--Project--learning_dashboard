@@ -69,6 +69,7 @@ const TaskForm = (props) => {
                 //this should navigate back to wherever you came from or close this popup if we've implemeneted that feature
                 //navigate('/')
                 setChange(!change);
+                navigate('/tasklist')
             })
             .catch((error) => {
                 console.log('error is:', error.response.data);
@@ -145,7 +146,7 @@ const TaskForm = (props) => {
             </form>
 {/* 
             this is just so i can see existing tasks on the screen */}
-            {state.tasks ? (
+            {/* {state.tasks ? (
                 <table>
                     <thead>
                         <tr>
@@ -170,7 +171,7 @@ const TaskForm = (props) => {
                         ))}
                     </tbody>
                 </table>
-            ) : null}
+            ) : null} */}
         </div>
     );
 };

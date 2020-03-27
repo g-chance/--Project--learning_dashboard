@@ -20,7 +20,7 @@ const Registration = () => {
                 navigate('/profile')
         })
         .catch(error => {
-            if (error.response.data.name == "MongoError"){
+            if (error.response.data.name === "MongoError"){
                 setErrorState(["Email already exists"]);
             }else{
                 const temp = []
