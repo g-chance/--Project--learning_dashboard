@@ -87,8 +87,12 @@ const TaskList = (props) => {
         }
     };
     
-    const startTimer = (e,i) =>{
+    const startTimer = (e,i) => {
         navigate(`/timer/select/${i}`)
+    }
+    
+    const editTask = (e,i)=> {
+        navigate(`/tasks/edit/${i}`)
     }
     return (
         <div className="taskList">
@@ -113,7 +117,7 @@ const TaskList = (props) => {
                   
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,1)}>Complete</button>
-                        <button>Edit</button>
+                        <button onClick={(e)=>editTask(e,i)}>Edit</button>
                         <button onClick={(e)=>startTimer(e,i)}>Timer</button>
                     </div>
                 </div>
@@ -132,7 +136,7 @@ const TaskList = (props) => {
 
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,1)}>Complete</button>
-                        <button>Edit</button>
+                        <button onClick={(e)=>editTask(e,i)}>Edit</button>
                         <button onClick={(e)=>startTimer(e,i)}>Timer</button>
                     </div>
                 </div>
@@ -151,7 +155,7 @@ const TaskList = (props) => {
                     <p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>
                     }
                     <div className="buttons">
-                    <button>Edit</button>
+                    <button onClick={(e)=>editTask(e,i)}>Edit</button>
                     <button onClick={(e)=>startTimer(e,i)}>Timer</button>
                     </div>
                     {/* <p className="deets"><span>Time Spent:</span> {task.timeSpent}</p> */}
