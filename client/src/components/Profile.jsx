@@ -70,7 +70,7 @@ const Profile = (props) => {
                 <div className='profileBg'>
                     <img src={profileCard} alt="profile" width='100%' />
                     <div className='profileInfo'>
-                        <img className='profileImg' src={state.profileImage} alt='No Profile Image'/>
+                        <img className='profileImg' src={state.profileImage} alt='No Profile'/>
                             <div className='profileLabel'>
                             <p>First Name</p>
                             <input type="text" name="firstName" value={state.firstName} />
@@ -96,7 +96,7 @@ const Profile = (props) => {
             ))}
             <form onSubmit={onSH}>
                 <div className='imageTag'>
-                <img src={state.profileImage} alt="Profile Image" width='25%'/><br/>
+                <img src={state.profileImage} alt="Profile" width='25%'/><br/>
                 <input type="text" name="profileImage" onChange={onCH} value={state.profileImage}/>
                 </div>
                 <div className='labelTag'>

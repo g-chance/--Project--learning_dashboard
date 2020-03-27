@@ -48,14 +48,14 @@ const TimerSelection = (props) => {
             <form onSubmit={onSubmitHandler}> 
             <img src={TimerCustom} alt="20-min-Timer"/>
             <div className='inputLabels'>
-            <label>Hours </label>
-            <input name="hours" onChange={onChangeHandler} type="number" step="1" min="0"/>
+            <label> </label>
+            <input name="hours" onChange={onChangeHandler} type="number" placeholder="Hours" step="1" min="0"/>
             <br/>
-            <label> Minutes </label>
-            <input name="minutes" onChange={onChangeHandler} type="number" step="1" min="0"/>
+            <label> </label>
+            <input name="minutes" onChange={onChangeHandler} type="number" placeholder="Minutes" step="1" min="0"/>
             <br/>
-            <label> Seconds </label>
-            <input name= "seconds" onChange={onChangeHandler} type="number" step="1" min="0"/>
+            <label> </label>
+            <input name= "seconds" onChange={onChangeHandler} type="number" placeholder="Seconds" step="1" min="0"/>
             <div className='action'>
             <button type="submit">Go</button>
             </div>
