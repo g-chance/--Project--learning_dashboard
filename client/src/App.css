@@ -352,3 +352,20 @@ h2{
 }
 
 /* End of Note */
+
+.noteBox{
+  width: 60%;
+  border: 2px solid black;
+  margin:2.5% auto;
+  padding: 5%;
+  overflow-y: scroll;
+  height: 300px
+}
+
+.noteBox h3{
+  margin-top: 2.5%;
+}
+
+.noteBoxContent{
+  margin-top: 1%;
+}
