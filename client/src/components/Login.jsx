@@ -14,7 +14,7 @@ const Login = (props) => {
         .then(response => {
             localStorage.setItem('userID',response.data._id)
             setErrorState(response.data.msg)
-            navigate('/home')
+            navigate('/profile')
         })
         .catch(error => console.log(error))
     }

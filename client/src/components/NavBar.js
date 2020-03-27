@@ -22,8 +22,8 @@ const NavBar = (props) => {
 
     const logout = () => {
         axios.get('http://localhost:8000/api/v1/logout', { withCredentials: true })
-            .then(response => setRefresher(!refresher))
-            .then(navigate('/'))
+            .then(response => {localStorage.removeItem('userID')
+            navigate('/')})
             .catch(error => console.log(error))
     }
 
