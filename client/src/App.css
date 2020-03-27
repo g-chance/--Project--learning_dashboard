@@ -304,6 +304,9 @@ margin-top: 1%;
 .noteWrapper{
   position: relative;
 }
+.noteWrapper img {
+  margin: 0 0 0 25px;
+}
 
 .content{
   position: absolute;
