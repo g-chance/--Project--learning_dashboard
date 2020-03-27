@@ -32,6 +32,7 @@ const PrimaryObjectSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        unique: true,
         required: [true, "Email is required"],
         validate: [emailRegexChecker, "Please enter a valid email"]
     },

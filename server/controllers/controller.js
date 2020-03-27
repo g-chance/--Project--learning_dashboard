@@ -38,7 +38,7 @@ module.exports = {
         PrimaryObject.findOne({email:req.body.email})
             .then(userFromDB => {
                 if(userFromDB === null) {
-                    res.json({msg: "User not found in database"})
+                    res.status(400).json({msg: "User not found in database"})
                 } else {
                     bcrypt.compare(req.body.password, userFromDB.password)
                     .then(bcryptCheckBoolean => {
@@ -53,21 +53,21 @@ module.exports = {
                                 httpOnly:true
                             }).json({msg:"success",_id:userFromDB._id})
                         } else {
-                            res.json({msg:"Password is not correct"})
+                            res.status(400).json({msg:"Password is not correct"})
                         }
                     })
-                    .catch(error => res.json({msg:"bcrypt compare has failed here for some reason"}))
+                    .catch(error => res.status(400).json({msg:"bcrypt compare has failed here for some reason"}))
                 }
             })
             .catch(error2 => {
                 console.log(error2)
-                res.json({msg:"DB has failed to run the query", error:error2})
+                res.status(400).json({msg:"DB has failed to run the query", error:error2})
             })
     },
     
     logout:(req, res) => {
         console.log('got here')
-        localStorage.removeItem('userID')
+        // localStorage.removeItem('userID')
         res.clearCookie('usertoken').json({msg:'logged out'})
     },
     // i moved this function here because it uses the req, res, next and it seems silly to have it

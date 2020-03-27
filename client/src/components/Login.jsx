@@ -13,10 +13,13 @@ const Login = (props) => {
         axios.post('http://localhost:8000/api/v1/login', fState, {withCredentials:true})
         .then(response => {
             localStorage.setItem('userID',response.data._id)
-            setErrorState(response.data.msg)
-            navigate('/home')
+            // setErrorState(response.data.msg)
+            navigate('/tasks/new')
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error.response)
+            setErrorState(error.response.data.msg)
+        })
     }
     const onCH = (e) => {
         setFState({
