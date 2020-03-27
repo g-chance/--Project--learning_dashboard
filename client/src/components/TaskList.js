@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 import axios from 'axios'
 
 const TaskList = (props) => {
@@ -86,7 +86,10 @@ const TaskList = (props) => {
             return `${minutes}m ${seconds}s`;
         }
     };
-
+    
+    const startTimer = (e,i) =>{
+        navigate(`/timer/select/${i}`)
+    }
     return (
         <div className="taskList">
             <Link className="newtaskLink" to="/tasks/new">
@@ -101,7 +104,7 @@ const TaskList = (props) => {
                 task!== null && task.dueDate && task.status !== 1 &&
                 new Date(task.dueDate).getTime() <= Date.now() &&
                 <div key={i} className="task">
-                    <Link to={`/tasks/notes/${i}/new`}><h2>{task.title}</h2></Link>
+                    <h2><Link to={`/tasks/notes/${i}/new`}>{task.title}</Link></h2>
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
 
@@ -111,6 +114,7 @@ const TaskList = (props) => {
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,1)}>Complete</button>
                         <button>Edit</button>
+                        <button onClick={(e)=>startTimer(e,i)}>Timer</button>
                     </div>
                 </div>
                 ))}
@@ -119,7 +123,7 @@ const TaskList = (props) => {
                 {tasks[0] && tasks.map((task, i) => (
                 task!== null && (new Date(task.startDate).getTime() <= Date.now() && (new Date(task.dueDate).getTime() >= Date.now() || !task.dueDate) && task.status !== 1) &&
                 <div key={i} className="task">
-                    <Link to={`/tasks/notes/${i}/new`}><h2>{task.title}</h2></Link>
+                    <h2><Link to={`/tasks/notes/${i}/new`}>{task.title}</Link></h2>
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
 
@@ -129,6 +133,7 @@ const TaskList = (props) => {
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,1)}>Complete</button>
                         <button>Edit</button>
+                        <button onClick={(e)=>startTimer(e,i)}>Timer</button>
                     </div>
                 </div>
                 ))}
@@ -139,13 +144,16 @@ const TaskList = (props) => {
                 {tasks[0] && tasks.map((task, i) => (
                 task!== null && new Date(task.startDate).getTime() > Date.now() &&
                 <div key={i} className="task">
-                    <Link to={`/tasks/notes/${i}/new`}><h2>{task.title}</h2></Link>
+                    <h2><Link to={`/tasks/notes/${i}/new`}>{task.title}</Link></h2>
                     <p className="desc">{task.description}</p>
                     <p className="deets"><span>Start Date:</span>{task.startDate ? task.startDate.substring(0, 10) : ''}</p>
                     {task.dueDate &&
                     <p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>
                     }
-                    <button className="buttons">Edit</button>
+                    <div className="buttons">
+                    <button>Edit</button>
+                    <button onClick={(e)=>startTimer(e,i)}>Timer</button>
+                    </div>
                     {/* <p className="deets"><span>Time Spent:</span> {task.timeSpent}</p> */}
                 </div>
                 ))}
@@ -155,10 +163,10 @@ const TaskList = (props) => {
                 {tasks[0] && tasks.map((task, i) => (
                 task!== null && task.status === 1 &&
                 <div key={i} className="task">
-                    <Link to={`/tasks/notes/${i}/new`}><h2>{task.title}</h2></Link>
+                    <h2><Link to={`/tasks/notes/${i}/new`}>{task.title}</Link></h2>
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
-//                     {<p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>}
+                    {<p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>}
                     <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,0)}>Move to Active</button>
