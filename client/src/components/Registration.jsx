@@ -24,7 +24,7 @@ const Registration = () => {
                 setErrorState(temp)
             } else {
                 localStorage.setItem('userID',response.data._id)
-                navigate('/success')
+                navigate('/profile')
             }
         })
         .catch(error => console.log(error))
