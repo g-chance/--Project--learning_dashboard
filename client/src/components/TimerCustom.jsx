@@ -78,7 +78,7 @@ const TimerCustom = (props) => {
     //do a axios.put call that increments the user's task at index taskIdx by 1 (this function is called every time setTracker is implemented via timerOperations()
     const stepTimeSpent = () => {
         //if a task exists at that index (taskIdx) then do a put request
-        if (state.tasks[props.taskIdx] != undefined) {
+        if (state.tasks && state.tasks[props.taskIdx] != undefined) {
             let temp = state.tasks;
             temp[props.taskIdx].timeSpent += 1;
             console.log('state.tasks[props.taskIdx].timeSpent is:', temp);
