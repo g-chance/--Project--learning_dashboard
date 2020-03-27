@@ -81,6 +81,8 @@ const Notes = (props) => {
                 <img src={pad} width="90%"/>
                 <div className="content">
                 <h4 style={{color:'darkBlue'}}>Date:{today}</h4>
+            
+            <h2 >{state.tasks && state.tasks[props.taskIdx].title}</h2>
             <div className='noteList'>
             <ul>
                 {state.tasks && state.tasks[props.taskIdx].notes.map((note, i) => (note!== null && 
