@@ -49,8 +49,10 @@ const Notes = (props) => {
         axios
         .put(`http://localhost:8000/api/v1/updateOne/${userID}`, { tasks: temp })
         .then((response) => {
+            setFormState({
+                notes:'',
+            })
             console.log('notes added to task')
-            navigate(`/tasks/notes/${props.taskIdx}/new`)
         })
         .catch((error) => {
             console.log('error is:', error.response.data);
