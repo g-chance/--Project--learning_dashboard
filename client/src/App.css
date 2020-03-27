@@ -213,6 +213,11 @@ margin-top: 1%;
   padding-right: 10%;
 }
 
+.buttons{
+  margin-top: 3%;
+  text-align: center;
+}
+
 @media only screen and (max-width: 1100px){
   
   .profileLabel{
@@ -342,7 +347,7 @@ margin-top: 2%;
 list-style-image: url('./images/star.png');
 }
 
-h2{
+.noteWrapper h2{
   text-align:center;
   color:darkBlue;
   margin-top: 2%;
