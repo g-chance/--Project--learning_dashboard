@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
 import axios from 'axios';
 
 const TimerCustom = (props) => {
@@ -29,7 +28,7 @@ const TimerCustom = (props) => {
     const [ startState, setStartState ] = useState(false);
     const [ pauseState, setPauseState ] = useState(false);
     const [ resumeState, setResumeState ] = useState(false);
-    const [ finished, setFinished ] = useState(false);
+    // const [ finished, setFinished ] = useState(false);
 
     const [ intervalVar, setIntervalVar ] = useState(null);
     const [ tracker, setTracker ] = useState(0);
@@ -78,7 +77,7 @@ const TimerCustom = (props) => {
     //do a axios.put call that increments the user's task at index taskIdx by 1 (this function is called every time setTracker is implemented via timerOperations()
     const stepTimeSpent = () => {
         //if a task exists at that index (taskIdx) then do a put request
-        if (state.tasks && state.tasks[props.taskIdx] != undefined) {
+        if (state.tasks && state.tasks[props.taskIdx] !== undefined) {
             let temp = state.tasks;
             temp[props.taskIdx].timeSpent += 1;
             console.log('state.tasks[props.taskIdx].timeSpent is:', temp);
@@ -105,7 +104,7 @@ const TimerCustom = (props) => {
         setStartState(false);
         setPauseState(false);
         setResumeState(false);
-        setFinished(true);
+        // setFinished(true);
     };
 
     const startTimer = (arg) => {
@@ -202,7 +201,7 @@ const TimerCustom = (props) => {
             <span id="base-timer-label" className="base-timer__label">
                 {formatTime(TIME_LIMIT - tracker)}
             </span>
-            <div>
+            <div className="button">
                 <button hidden={startState} onClick={startButton}>
                     Start
                 </button>

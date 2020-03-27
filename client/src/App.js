@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { Router } from '@reach/router';
 import Wrapper from './components/Wrapper';
@@ -9,6 +9,7 @@ import TimerCustom from './components/TimerCustom';
 import TimerSelection from './components/TimerSelection';
 import Profile from './components/Profile';
 import NavBar from './components/NavBar';
+import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import Notes from './components/Notes';
 
@@ -26,6 +27,7 @@ function App() {
         <TimerSelection path="/timer/select" />
         <TimerSelection path="/timer/select/:taskIdx" />
         <Timer20 path="/timer/timer20" />
+        <TaskList path="/tasklist"></TaskList>
         <Timer20 path="/timer/timer20/:taskIdx" />
         <Timer50 path="/timer/timer50" />
         <Timer50 path="/timer/timer50/:taskIdx" />
