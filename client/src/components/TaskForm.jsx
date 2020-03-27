@@ -93,7 +93,7 @@ const TaskForm = (props) => {
     };
 
     return (
-        <div style={{ margin: '20px' }}>
+        <div className="taskForm" style={{ margin: '20px' }}>
             <p style={{ color: 'red' }}>
                 {formState.description.length > 0 && formState.description.length < 3 && descriptionError}
             </p>
@@ -108,12 +108,12 @@ const TaskForm = (props) => {
                 </p>
             ))}
 
-            <h5>Add a new task:</h5>
+            <h2>Add a new task:</h2>
 
             <form onSubmit={onSubmitHandler}>
                 <label htmlFor="title">Title: </label>
                 <input type="text" id="title" name="title" onChange={onChangeHandler} value={formState.title || ''} />
-                <br />
+                
                 <label htmlFor="description">Description (optional): </label>
                 <input
                     type="text"
@@ -122,7 +122,7 @@ const TaskForm = (props) => {
                     onChange={onChangeHandler}
                     value={formState.description || ''}
                 />
-                <br />
+                
                 <label htmlFor="startDate">Start Date: </label>
                 <input
                     type="date"
@@ -131,7 +131,7 @@ const TaskForm = (props) => {
                     onChange={onChangeHandler}
                     value={formState.startDate || ''}
                 />
-                <br />
+                
                 <label htmlFor="dueDate">Due Date (optional): </label>
                 <input
                     type="date"
@@ -140,11 +140,10 @@ const TaskForm = (props) => {
                     onChange={onChangeHandler}
                     value={formState.dueDate || ''}
                 />
-                <br />
-                <button type="submit" disabled={hasError}>
-                    Submit
-                </button>{' '}
-                <button onClick={cancelButton}>Cancel</button>
+                <div className="buttons">
+                    <button type="submit" disabled={hasError}>Submit</button>
+                    <button onClick={cancelButton}>Cancel</button>
+                </div>
                 {/* a debugging h4 that console log's state info */}
                 {/* <h4 onClick={checkState}>Console Log State and formState</h4> */}
             </form>
