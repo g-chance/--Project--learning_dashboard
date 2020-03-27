@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { Router } from '@reach/router';
 import Wrapper from './components/Wrapper';
@@ -27,7 +27,6 @@ function App() {
         <TimerSelection path="/timer/select/:taskIdx" />
         <Timer20 path="/timer/timer20" />
         <TaskList path="/tasklist"></TaskList>
-      </Router> 
         <Timer20 path="/timer/timer20/:taskIdx" />
         <Timer50 path="/timer/timer50" />
         <Timer50 path="/timer/timer50/:taskIdx" />
