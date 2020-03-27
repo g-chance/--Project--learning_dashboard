@@ -16,14 +16,6 @@ const Profile = (props) => {
         password: ''
     })
 
-    const [formState, setFormState] = useState({
-        profileImage: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
-    })
-
     const [errorState, setErrorState] = useState([])
     const [hide, setHide] = useState(true)
     useEffect(
