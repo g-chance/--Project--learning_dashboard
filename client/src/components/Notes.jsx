@@ -87,7 +87,7 @@ const Notes = (props) => {
             <li key={i}> {note} <img  onClick={(e)=>deleteOneNote(e,i)} src={Delete} alt="trash" width='2.5%'/> </li>))}
             </ul>
             </div>
-                <h2 style={{textAlign:'center', color:'darkBlue'}}>Add a New Note</h2>
+                <h2>Add a New Note</h2>
                 <form onSubmit={onSubmitHandler} >
                 <textarea name="notes" onChange={onChangeHandler}></textarea>
                 <button className='noteSubmit'type="submit">Add</button>
