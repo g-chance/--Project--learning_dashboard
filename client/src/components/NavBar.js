@@ -9,7 +9,7 @@ const NavBar = (props) => {
 
     useEffect(() => {
         window.addEventListener("mousedown", (e) => {
-            if (e.target.className === "hamburger") {
+            if (e.target.className === "hamburger" || e.target.className === "ignore") {
             } else {
                 setHidden(true);
             }
