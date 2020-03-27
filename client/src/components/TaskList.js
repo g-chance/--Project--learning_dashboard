@@ -158,7 +158,7 @@ const TaskList = (props) => {
                     <Link to={`/tasks/notes/${i}/new`}><h2>{task.title}</h2></Link>
                     <p className="desc">{task.description}</p>
                     {/* <p className="deets"><span>Start Date:</span> {task.startDate}</p> */}
-//                     {<p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>}
+                    {/* {<p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>} */}
                     <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,0)}>Move to Active</button>
