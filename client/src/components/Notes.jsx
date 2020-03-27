@@ -50,7 +50,7 @@ const Notes = (props) => {
         .put(`http://localhost:8000/api/v1/updateOne/${userID}`, { tasks: temp })
         .then((response) => {
             console.log('notes added to task')
-            navigate('/tasklist')
+            navigate(`/tasks/notes/${props.taskIdx}/new`)
         })
         .catch((error) => {
             console.log('error is:', error.response.data);
