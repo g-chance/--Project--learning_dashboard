@@ -114,7 +114,7 @@ const TaskList = (props) => {
 
                     <p className="deets"><span>Due Date:</span> {task.dueDate ? task.dueDate.substring(0, 10) : ''}</p>
                     <p className="deets"><span>Time Spent:</span> {formatTime(task.timeSpent)}</p>
-                  
+
                     <div className="buttons">
                         <button onClick={(e) => completeTask(e, i, task,1)}>Complete</button>
                         <button onClick={(e)=>editTask(e,i)}>Edit</button>
