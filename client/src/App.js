@@ -9,6 +9,7 @@ import TimerCustom from './components/TimerCustom';
 import TimerSelection from './components/TimerSelection';
 import Profile from './components/Profile';
 import NavBar from './components/NavBar';
+import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 
 // i used a wrapper so that you can see the registration and login as different components
@@ -25,6 +26,8 @@ function App() {
         <TimerSelection path="/timer/select" />
         <TimerSelection path="/timer/select/:taskIdx" />
         <Timer20 path="/timer/timer20" />
+        <TaskList path="/tasklist"></TaskList>
+      </Router> 
         <Timer20 path="/timer/timer20/:taskIdx" />
         <Timer50 path="/timer/timer50" />
         <Timer50 path="/timer/timer50/:taskIdx" />
