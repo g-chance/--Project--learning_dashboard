@@ -13,6 +13,7 @@ import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import Notes from './components/Notes';
 import EditForm from './components/EditForm';
+import NotesDisplay from './components/NotesDisplay';
 
 // i used a wrapper so that you can see the registration and login as different components
 // instead of on one page. the wrapper allows me to put both components on the same route.
@@ -37,6 +38,7 @@ function App() {
         <TaskForm path="/tasks/new" />
         <EditForm path="/tasks/edit/:taskIdx" />
         <Notes path="/tasks/notes/:taskIdx/new"/>
+        <NotesDisplay path="/notes"/>
       </Router>
     </div>
   );
