@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
+import axios from 'axios'
 
 const NavBar = (props) => {
-
+    const userID = localStorage.getItem('userID')
     const [hidden, setHidden] = useState(true)
 
     useEffect(() => {
@@ -16,6 +17,11 @@ const NavBar = (props) => {
 
     const onClickHandler = (e) => {
         setHidden(false)
+    }
+
+    const logout = (e)=>{
+        localStorage.removeItem('userID')
+        navigate('/')
     }
 
     return (
@@ -36,7 +42,7 @@ const NavBar = (props) => {
                             <img src="/img/icons_png/timer_icon.png" alt="timer" />
                         </Link>
                     </div>
-                    <a className="logout smHide">Logout</a>
+                    <a onClick={logout} className="logout smHide">Logout</a>
                     <div className="dropdown">
                         <div className="hamburger" onClick={(e) => onClickHandler(e)}>
                             <div></div>
