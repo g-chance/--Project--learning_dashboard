@@ -8,15 +8,18 @@ Our learning dashboard has implemented the following core features Profile, Task
 <strong>Team Members</strong> 
 <div>
 
-👩‍💻  [Lucie Wang](https://github.com/Lucie-Wang): Product Manager for the project. Key contributor to the Timer and Profile, Notes features. Designed Icon Graphics.
+👩‍💻  [Lucie Wang](https://github.com/Lucie-Wang)
+<p>Product Manager for the project. Key contributor to the Timer and Profile, Notes features. Designed Icon Graphics.</p>
 
 </div>
 <div>
 
-👨‍💻  [Greg Chance](https://github.com/g-chance): UI Master for the project. Key contributor to the Task, Nav Bar features. Implemented Responsive Design.
+👨‍💻  [Greg Chance](https://github.com/g-chance)
+<p>UI Master for the project. Key contributor to the Task, Nav Bar features. Implemented Responsive Design.</p>
 </div>
 
 <div>
 
-👨‍💻  [Andy Tong](https://github.com/Andy-Tong8): Key contributor to the Task and Timer features. 
+👨‍💻  [Andy Tong](https://github.com/Andy-Tong8)
+<p>Key contributor to the Task and Timer features.</p>
 </div>
